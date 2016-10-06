@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 // MongoDB - used by all services
 if(process.env.VCAP_SERVICES){
 	var services = JSON.parse(process.env.VCAP_SERVICES);
-  if(services['mongodb-2.4']) {
-    uri = services['mongodb-2.4'][0].credentials.url;
+  if(services['mongodb']) {
+    uri = services['mongodb'][0].credentials.url;
   } else {
     uri = process.env.MONGO_URI;
   }
